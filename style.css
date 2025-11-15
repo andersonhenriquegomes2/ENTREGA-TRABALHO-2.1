@@ -1,0 +1,144 @@
+
+/* Design System - Variáveis CSS */
+:root{
+  /* Paleta (8 cores) */
+  --c-primary: #1f2937; /* cinza-escuro */
+  --c-primary-2: #4b5563;
+  --c-accent: #0ea5a4; /* teal */
+  --c-accent-2: #06b6d4;
+  --c-muted: #9ca3af;
+  --c-bg: #f8fafc;
+  --c-surface: #ffffff;
+  --c-danger: #ef4444;
+
+  /* Tipografia - 5 tamanhos */
+  --font-base: 16px;
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 1rem; /* 16px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.5rem; /* 24px */
+
+  /* Espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Grid system */
+  --container-max: 1200px;
+}
+
+/* Base & Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size:var(--font-base);
+  background:var(--c-bg);
+  color:var(--c-primary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Container & grid */
+.container{max-width:var(--container-max);margin:0 auto;padding:var(--space-3)}
+.grid{display:grid;gap:var(--space-3)}
+
+/* Header */
+.site-header{background:var(--c-surface);border-bottom:1px solid #e6eef2;position:sticky;top:0;z-index:40}
+.header-grid{grid-template-columns:1fr auto;align-items:center;padding:var(--space-2) 0}
+.logo a{font-weight:700;text-decoration:none;color:var(--c-primary);font-size:var(--fs-lg)}
+.logo-dot{color:var(--c-accent)}
+
+/* Nav */
+.main-nav{display:flex;align-items:center}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:var(--space-3);align-items:center}
+.nav-list a{text-decoration:none;color:var(--c-primary-2);padding:var(--space-1) var(--space-2);border-radius:8px}
+.nav-list a:focus{outline:2px solid var(--c-accent-2);outline-offset:2px}
+
+/* submenu */
+.has-sub{position:relative}
+.submenu{position:absolute;left:0;top:calc(100% + 8px);background:var(--c-surface);border:1px solid #e5eef2;padding:8px;border-radius:6px;display:none;min-width:160px;box-shadow:0 6px 18px rgba(15,23,42,0.08)}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu{display:block}
+.submenu li{margin:0}
+.submenu a{display:block;padding:6px 12px;color:var(--c-primary-2)}
+
+/* Hamburger (mobile) */
+.hamburger{display:none;background:none;border:none;font-size:1.25rem;padding:6px}
+@media (max-width:900px){
+  .nav-list{display:none;flex-direction:column;gap:0;background:var(--c-surface);position:absolute;right:16px;top:64px;padding:8px;border-radius:8px;box-shadow:0 8px 24px rgba(15,23,42,0.08)}
+  .nav-list.show{display:flex}
+  .hamburger{display:block}
+}
+
+/* Hero & cards */
+.hero{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);align-items:flex-start;background:linear-gradient(180deg,rgba(14,165,164,0.05),transparent);border:1px solid #e6eef2}
+.card{background:var(--c-surface);padding:var(--space-3);border-radius:12px;box-shadow:0 4px 18px rgba(15,23,42,0.04)}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid transparent;font-weight:600;cursor:pointer;text-decoration:none;background:transparent}
+.btn.primary{background:var(--c-accent);color:white}
+.btn.ghost{background:transparent;border:1px solid var(--c-primary-2);color:var(--c-primary-2)}
+
+/* button states */
+.btn:focus{outline:3px solid rgba(6,182,212,0.2);outline-offset:2px}
+.btn:hover{transform:translateY(-2px);transition:transform .15s ease}
+.btn:active{transform:translateY(0)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Projects grid using CSS Grid and a 12-column custom system */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+.projects-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-3)}
+
+/* project card spans for demo */
+.project-card{display:flex;flex-direction:column;gap:var(--space-2);align-items:flex-start}
+.project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+
+/* badges & tags */
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:var(--fs-xs);background:var(--c-bg);border:1px solid #e6eef2;color:var(--c-primary-2);margin-right:6px}
+
+/* forms */
+.form label{display:block;margin-bottom:var(--space-2);font-size:var(--fs-sm)}
+.form input,.form textarea{width:100%;padding:10px;border:1px solid #dfe9ee;border-radius:8px;font-size:var(--fs-md)}
+.form input:focus,.form textarea:focus{outline:2px solid var(--c-accent-2);border-color:var(--c-accent)}
+.form-actions{display:flex;gap:var(--space-2);margin-top:var(--space-2)}
+
+/* feedback components (alerts, toast, modal) */
+.alert{padding:var(--space-2);border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:#fff;box-shadow:0 6px 20px rgba(15,23,42,0.04)}
+.toast{position:fixed;right:var(--space-3);bottom:var(--space-3);padding:var(--space-2);border-radius:8px;box-shadow:0 6px 20px rgba(15,23,42,0.08);display:none}
+.toast.show{display:block}
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.4);display:none;align-items:center;justify-content:center}
+.modal{background:var(--c-surface);padding:var(--space-3);border-radius:12px;max-width:560px;width:90%}
+
+/* footer */
+.site-footer{padding:var(--space-3);font-size:var(--fs-sm);color:var(--c-muted);background:transparent;border-top:1px solid #eee;margin-top:var(--space-4)}
+
+/* Responsive breakpoints (5 breakpoints) */
+@media (max-width:1200px){ /* xl */
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){ /* lg */
+  .container{padding:var(--space-2)}
+  .grid-3{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:repeat(6,1fr)}
+}
+@media (max-width:700px){ /* md */
+  .header-grid{grid-template-columns:1fr auto}
+  .logo a{font-size:var(--fs-md)}
+}
+@media (max-width:480px){ /* sm */
+  .logo a{font-size:var(--fs-sm)}
+  .hero{padding:var(--space-2)}
+}
+@media (max-width:360px){ /* xs */
+  .nav-list a{padding:6px 10px}
+}
+
+/* Utility */
+.text-center{text-align:center}
+.hidden{display:none}
