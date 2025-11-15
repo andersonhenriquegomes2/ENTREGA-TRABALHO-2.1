@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Entrega II - Anderson</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container grid header-grid">
+      <div class="logo"><a href="index.html">Anderson<span class="logo-dot">.</span></a></div>
+      <nav class="main-nav" id="mainNav">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li class="has-sub">
+            <a href="pages/projetos.html">Projetos ▾</a>
+            <ul class="submenu">
+              <li><a href="pages/projetos.html#web">Web</a></li>
+              <li><a href="pages/projetos.html#design">Design</a></li>
+              <li><a href="pages/projetos.html#acad">Acadêmicos</a></li>
+            </ul>
+          </li>
+          <li><a href="pages/sobre.html">Sobre</a></li>
+          <li><a href="pages/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <h1>Entrega Prática II</h1>
+      <p>Este site foi feito para cumprir as exigências da entrega: simples, acessível e responsivo — pensado para quem está começando.</p>
+      <a class="btn primary" href="pages/projetos.html">Ver projetos</a>
+    </section>
+
+    <section class="grid grid-3 projects">
+      <article class="card project-card">
+        <img src="assets/images/project-1.svg" alt="Projeto 1">
+        <h3>Projeto A</h3>
+        <p>Breve descrição do projeto A. Cartões responsivos com sistema de tags.</p>
+        <div class="tags"><span class="badge">web</span><span class="badge">UI</span></div>
+      </article>
+
+      <article class="card project-card">
+        <img src="assets/images/project-2.svg" alt="Projeto 2">
+        <h3>Projeto B</h3>
+        <p>Breve descrição do projeto B. Exemplo de acessibilidade e responsividade.</p>
+        <div class="tags"><span class="badge">acadêmico</span><span class="badge">css</span></div>
+      </article>
+
+      <article class="card project-card">
+        <img src="assets/images/project-3.svg" alt="Projeto 3">
+        <h3>Projeto C</h3>
+        <p>Breve descrição do projeto C. Componentes reutilizáveis.</p>
+        <div class="tags"><span class="badge">design</span><span class="badge">grid</span></div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Formulário de contato</h2>
+      <form id="contactForm" class="form">
+        <label>Nome
+          <input name="name" required minlength="2" placeholder="Seu nome">
+        </label>
+        <label>Email
+          <input name="email" type="email" required placeholder="seu@exemplo.com">
+        </label>
+        <label>Mensagem
+          <textarea name="message" required minlength="10" placeholder="Escreva sua mensagem"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Enviar</button>
+          <button class="btn ghost" type="reset">Limpar</button>
+        </div>
+      </form>
+      <div id="formFeedback" role="status" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© 2025 Anderson - Projeto de Entrega II</div>
+      <div>Feito com foco em: responsividade, acessibilidade e sistema de design.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
